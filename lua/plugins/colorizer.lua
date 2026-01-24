@@ -1,8 +1,7 @@
 return {
     "norcalli/nvim-colorizer.lua",
-    ft = "css",
-    opts = {
-        "*",
-        css = true,
-    },
+    event = { "BufRead" },
+    config = function()
+        require("colorizer").setup()
+    end
 }

@@ -4,8 +4,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Basic
-opt.shell = "bash"
-opt.wrap = true
+opt.wrap = false
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
@@ -39,7 +38,7 @@ opt.signcolumn = "yes"
 opt.winborder = "single"
 opt.background = "dark"
 opt.termguicolors = true
-opt.showmode = false
+opt.showmode = true
 
 -- Highlight when yanking
 vim.api.nvim_create_autocmd("TextYankPost", {

@@ -1,8 +1,22 @@
+-- Enable all LSPs
+vim.lsp.enable({
+    "lua_ls", "csharp_ls", "intelephense",
+    "html", "cssls", "ts_ls", "tailwindcss", "angularls",
+})
+
+-- Config each LSP
+vim.lsp.config("lua_ls", {
+    settings = {
+        Lua = {
+            workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+        },
+    },
+})
+
 return {
     "mason-org/mason.nvim",
     dependencies = { "neovim/nvim-lspconfig" },
-    event = { "BufReadPost", "BufNewFile" },
-    opts = {},
+    event = { "BufRead" },
     keys = {
         {
             "<leader>M",
@@ -10,20 +24,5 @@ return {
             desc = "Mason",
         },
     },
-
-    -- LSP setups
-    vim.lsp.enable({
-        "lua_ls",
-        "html", "cssls", "ts_ls", "tailwindcss",
-        "laravel_ls", "intelephense",
-    }),
-
-    vim.lsp.config("lua_ls", {
-        settings = {
-            Lua = {
-                workspace = {
-                    library = vim.api.nvim_get_runtime_file("", true), },
-            },
-        },
-    }),
+    opts = {}
 }
