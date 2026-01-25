@@ -2,6 +2,7 @@
 vim.lsp.enable({
     "lua_ls", "csharp_ls", "intelephense",
     "html", "cssls", "ts_ls", "tailwindcss", "angularls",
+    "marksman",
 })
 
 -- Config each LSP

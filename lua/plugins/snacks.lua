@@ -1,11 +1,16 @@
 ---@diagnostic disable: undefined-global
 return {
     "folke/snacks.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
     priority = 1000,
     opts = {
         bigfile = { enabled = true },
         explorer = { enabled = true },
+        indent = {
+            enabled = true,
+            animate = { enabled = false },
+        },
         picker = {
             layout = "ivy",
             enabled = true,
@@ -37,6 +42,7 @@ return {
         { "<leader>e",       function() Snacks.explorer() end,                                       desc = "File Tree", },
 
         -- Search
+        { "<leader>/",       function() Snacks.picker.grep() end,                                    desc = "Grep" },
         { "<leader>sh",      function() Snacks.picker.help() end,                                    desc = "Search help", },
         { "<leader>sk",      function() Snacks.picker.keymaps() end,                                 desc = "Search keymaps", },
         { "<leader>sd",      function() Snacks.picker.diagnostics() end,                             desc = "Search Diagnostics", },

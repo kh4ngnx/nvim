@@ -1,6 +1,7 @@
 local map = vim.keymap.set
 
 -- TERMINAL MODE
+map("n", "<C-t>", "<CMD>tabnew<CR><CMD>term<CR>a")
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "NORMAL MODE in Terminal" })
 
 -- Move lines in visual selection
