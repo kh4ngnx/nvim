@@ -4,13 +4,14 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Basic
-opt.wrap = false
+opt.wrap = true
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
 opt.splitright = true
 opt.confirm = true
 opt.scrolloff = 10
+opt.shell = "bash"
 
 -- Indentation
 opt.tabstop = 4
@@ -39,12 +40,14 @@ opt.winborder = "single"
 opt.background = "dark"
 opt.termguicolors = true
 opt.showmode = true
+opt.showtabline = 2
+opt.laststatus = 0
 
 -- Highlight when yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-  callback = function()
-    vim.hl.on_yank()
-  end,
+    desc = "Highlight when yanking (copying) text",
+    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+    callback = function()
+        vim.hl.on_yank()
+    end,
 })

@@ -1,8 +1,6 @@
 return {
     "stevearc/oil.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
-    priority = 1000,
     opts = {
         columns = {
             { "size",        highlight = "Special" },
@@ -10,14 +8,16 @@ return {
             { "permissions", highlight = "Function" },
             "icon"
         },
-        buf_options = {
-            buflisted = true,
-            bufhidden = "hide",
-        },
         delete_to_trash = true,
         view_options = { show_hidden = true, },
     },
     keys = {
-        { "<leader>o", "<CMD>Oil<CR>", desc = "Oil", },
+        {
+            "<leader>o",
+            function()
+                vim.cmd("Oil")
+            end,
+            desc = "Oil",
+        },
     }
 }

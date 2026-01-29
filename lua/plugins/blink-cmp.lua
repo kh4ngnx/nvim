@@ -2,7 +2,7 @@ return {
     "saghen/blink.cmp",
     dependencies = { "rafamadriz/friendly-snippets" },
     event = { "InsertEnter" },
-    version = "v1.*",
+    version = "1.*",
     opts = {
         keymap = {
             preset = "none",
@@ -20,12 +20,15 @@ return {
 
             ["<A-s>"] = { "show_signature", "hide_signature", "fallback" },
         },
-        appearance = { nerd_font_variant = "mono", },
+        appearance = { nerd_font_variant = "normal", },
         completion = {
             list = {
                 selection = { preselect = true, auto_insert = false },
             },
-            documentation = { auto_show = false, },
+            documentation = {
+                auto_show = false,
+                treesitter_highlighting = false,
+            },
         },
         sources = {
             default = { "lsp", "path", "snippets", "buffer" },

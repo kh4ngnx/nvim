@@ -1,7 +1,6 @@
 return {
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "LspAttach",
-    priority = 1000,
     keys = {
         { "df",         vim.diagnostic.open_float, desc = "Diagnostic Float" },
         { "<leader>ca", vim.lsp.buf.code_action,   desc = "Code Action" },

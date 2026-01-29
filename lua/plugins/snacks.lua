@@ -31,8 +31,7 @@ return {
             "<leader>fp",
             function()
                 Snacks.picker.projects({
-                    dev = { "~/dev" },
-                    recent = false,
+                    dev = { "~/dev", "~/.config" }, recent = false,
                 })
             end,
             desc = "Find projects",

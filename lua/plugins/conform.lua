@@ -1,6 +1,6 @@
 return {
     "stevearc/conform.nvim",
-    event = { "BufWritePre", "BufReadPre" },
+    event = { "BufWritePre" },
     cmd = { "ConformInfo" },
     keys = {
         {
@@ -25,6 +25,7 @@ return {
             typescript = { "prettier", stop_after_first = true },
             javascriptreact = { "prettier", stop_after_first = true },
             typescriptreact = { "prettier", stop_after_first = true },
+            vue = { "prettier", stop_after_first = true },
         },
         -- Set default options
         default_format_opts = {
