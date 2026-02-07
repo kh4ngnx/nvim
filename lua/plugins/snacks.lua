@@ -1,7 +1,6 @@
 ---@diagnostic disable: undefined-global
 return {
     "folke/snacks.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
     priority = 1000,
     opts = {
@@ -12,7 +11,6 @@ return {
             animate = { enabled = false },
         },
         picker = {
-            layout = "ivy",
             enabled = true,
             win = {
                 input = {
@@ -31,7 +29,7 @@ return {
             "<leader>fp",
             function()
                 Snacks.picker.projects({
-                    dev = { "~/dev", "~/.config" }, recent = false,
+                    dev = { "~/dev" }, recent = false,
                 })
             end,
             desc = "Find projects",
@@ -42,9 +40,10 @@ return {
 
         -- Search
         { "<leader>/",       function() Snacks.picker.grep() end,                                    desc = "Grep" },
-        { "<leader>sh",      function() Snacks.picker.help() end,                                    desc = "Search help", },
+        { "<leader>sh",      function() Snacks.picker.help({ layout = "ivy" }) end,                                    desc = "Search help", },
         { "<leader>sk",      function() Snacks.picker.keymaps() end,                                 desc = "Search keymaps", },
         { "<leader>sd",      function() Snacks.picker.diagnostics() end,                             desc = "Search Diagnostics", },
+        { "<leader>sH", function() Snacks.picker.highlights() end, desc = "Highlights" },
 
         -- Git
         { "<leader>lg",      function() Snacks.lazygit() end,                                        desc = "Open Lazygit", },

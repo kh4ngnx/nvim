@@ -1,17 +1,17 @@
 return {
-    "norcalli/nvim-colorizer.lua",
-    cmd = "ColorizerToggle",
+    "uga-rosa/ccc.nvim",
+    event = "BufRead",
     opts = {
-        css = { css = true, },
-        html = { names = false, },
+        highlighter = {
+            auto_enable = true,
+            lsp = true,
+        },
     },
     keys = {
         {
             "<leader>cc",
-            function()
-                vim.cmd("ColorizerToggle")
-            end,
-            desc = "Toggle Colorizer",
+            "<CMD>CccHighlighterToggle<CR>",
+            desc = "Toogle Color Highlighter"
         },
-    },
+    }
 }

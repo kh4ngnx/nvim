@@ -7,10 +7,8 @@ return {
         "neovim/nvim-lspconfig",
         dependecies = {
             "mason-org/mason.nvim",
-            "saghen/blink.cmp",
         },
         config = function()
-            local util = require("lspconfig.util")
             local capabilities = require('blink.cmp').get_lsp_capabilities()
 
             -- Enable the following language servers
@@ -35,16 +33,14 @@ return {
                     },
                 },
 
-                laravel_ls = {
-                    root_dir = util.root_pattern("artisan"),
-                },
-
+                html = {},
+                laravel_ls = {},
                 csharp_ls = {},
                 intelephense = {},
-                html = {},
                 cssls = {},
                 angularls = {},
                 vue_ls = {},
+                marksman = {},
             }
 
             for name, server in pairs(servers) do

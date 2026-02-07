@@ -20,7 +20,7 @@ return {
 
             ["<A-s>"] = { "show_signature", "hide_signature", "fallback" },
         },
-        appearance = { nerd_font_variant = "normal", },
+        appearance = { nerd_font_variant = "mono", },
         completion = {
             list = {
                 selection = { preselect = true, auto_insert = false },
