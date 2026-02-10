@@ -11,7 +11,7 @@ opt.cursorline = true
 opt.splitright = true
 opt.confirm = true
 opt.scrolloff = 10
-opt.shell = "pwsh"
+opt.shell = "pwsh --NoLogo"
 
 -- Indentation
 opt.tabstop = 4
